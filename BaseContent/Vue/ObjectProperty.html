@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据代理</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <script text="text/javascript">
+    let number=18
+    let person={
+      name:'张三',
+      sex:'女',
+    }
+    // age不参与遍历，不可枚举
+    Object.defineProperty(person,'age',{
+      // value:18,
+      // // 控制属性是否可以枚举，默认值为FALSE
+      // enumerable:false,
+      // writable:true,//控制属性是否可以被修改，默认值为FALSE
+      // configurable:true//控制属性是否可以被删除，默认值为FALSE
+
+      get(){
+        console.log('有人读取age属性了')
+      },
+      set(value){
+        console.log('有人修改了age属性，且值是',value)
+        number=value
+      }
+    })
+    console.log(person)
+    // ['name', 'sex']
+    console.log(Object.keys(person))
+  </script>
+</body>
+</html>

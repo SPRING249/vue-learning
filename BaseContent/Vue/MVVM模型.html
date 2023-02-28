@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM模型</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--View-->
+    <div id="root">
+        <h2>名称：{{name}}</h2>
+        <h2>战队：{{rank}}</h2>
+        <h2>测试：{{$options}}</h2>
+        <h2>测试2：{{_uid}}</h2>
+    </div>
+<!-- 总结： data中所有的属性，最后都出现在了vm身上
+        vm身上所有的属性 及 Vue原型身上所有的属性，在Vue模板中都可以直接使用  -->
+    <script>
+        Vue.config.productionTip = false
+        // ViewModel--桥梁 data里的数据最终在vm上，vm里面的所有东西都可以输出
+        const vm=new Vue({
+            el:'#root',
+            // Model:data中的数据
+            data:{
+                name:'pan',
+                rank:'bowen'
+            }
+
+        })
+        console.log(vm)
+    </script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-~
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,10 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数据绑定</title>
+    <script src="./vue.js"></script>
 </head>
 
 <body>
+    <div id="root">
+        <!--        v-model只能用在表单类元素（输入类元素）中-->
+        单项数据绑定：<input type="text" v-bind:value="name" >
+        双向数据绑定：<input type="text" v-model:value="name">
+        <!--简写-->
+        单项数据绑定：<input type="text" :value="name" >
+        双向数据绑定：<input type="text" v-model="name">
+    </div>
 
+    <script>
+        //阻止vue在启动时生成生产提示。
+        Vue.config.productionTip = false;
+        const v=new Vue({
+            // el:'#root',//第一种写法
+            data:{
+                name: 'JoJo'
+            },
+            data() {//函数式写法，组件里必须用函数式，禁止使用箭头函数
+                return{
+                    name:'JoJo'
+                }
+            }
+        })
+        v.$mount('#root')//el的第二种写法 mount--挂载
+    </script>
 </body>
 
 </html>
