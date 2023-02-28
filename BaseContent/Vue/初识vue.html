@@ -14,7 +14,7 @@
     <!-- 准备好一个容器 -->
     <!-- 注意区别表达式和js代码 -->
     <div class="root">
-        <h1>{{name.toUpperCase()}},{{address}},{{Date.now()}}</h1>
+        <h1>{{name.toUpperCase()}},{{address}},{{school.name}}</h1>
     </div>
 
 
@@ -28,7 +28,10 @@
             // data中存储数据，数据供el指定的容器使用
             data: {
                 name: '潘博文',
-                address: '南京'
+                address: '南京',
+                school: {
+                    name: 'Pabo'
+                }
             }
         })
     </script>
