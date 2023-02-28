@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+    <script>
+        const arr = new Array();
+        const arr1 = [];
+        const arr2=['小白',123,true,28.9];
+
+        let arr3=[1,2,3];
+        alert(arr3[1]);//2
+        //遍历数组
+        for (let i=0;i<arr3.length;i++){
+            console.log(arr3[i]);
+        }
+    //     数组长度
+        console.log(arr3.length)
+    //将数组 [‘red’, ‘green’, ‘blue’, ‘pink’] 转换为字符串，并且用 | 或其他符号分割
+        let color=['red','green','blue','pink']
+        let str=''
+        const separator='|'
+        for (let i=0; i<color.length; i++){
+            str+=color[i]+separator
+        }
+        console.log(str)
+
+    //     数组内新增元素
+        color.length=7
+        console.log(color)//['red', 'green', 'blue', 'pink', empty × 3]
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
