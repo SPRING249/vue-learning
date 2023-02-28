@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+    <style>
+        .box {
+            /* 相对定位
+            position: relative;
+            /* 水平以left为准，垂直以top为准 */
+            /* left: 100px;
+            top: 200px;
+            right: 200px;
+            bottom: 200px;  */
+            /* 绝对定位:先找已经定位的位置上，如果有这样的父级就以这个父级为参照物
+                有父级，但是父级没有定位，以浏览器窗口为参照进行定位 */
+            position: absolute;
+            /* 1.脱标，不占位 
+                2.*/
+            top: 100px;
+            left: 200px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 相对定位 -->
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <div class="box">box</div>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+    <p>测试定位测试定位测试定位测试定位测试定位</p>
+
+</body>
+
+</html>

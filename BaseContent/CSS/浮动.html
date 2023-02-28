@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+        /* 浏览器解析行内块或行内标签是，标签换行写会有间距；要用浮动解决 */
+        
+        div {
+            width: 100px;
+            height: 100px;
+            /* display: inline-block; */
+            /* 让快标签排成一排，横向排列找浮动 */
+            float: left;
+        }
+        
+        .one {
+            background-color: pink;
+            float: right;
+        }
+        
+        .two {
+            background-color: green;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 浮动：网页布局：让标签完美得无间距的排列 -->
+    <div class="one">one</div>
+    <div class="two">two</div>
+
+</body>
+
+</html>

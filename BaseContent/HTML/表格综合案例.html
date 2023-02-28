@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格综合案例：负责表示数据</title>
+</head>
+
+<body>
+    <table border="1" align="center" cellspacing="10" cellpadding="20">
+        <!-- 表格的头部区域和主体区域 -->
+        <thead>
+            <tr>
+                <th>排名 </th>
+                <th>关键词 </th>
+                <th>趋势</th>
+                <th>进入搜索 </th>
+                <th>最近七日 </th>
+                <th>相关链接 </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>鬼</td>
+                <td>上升</td>
+                <td>上升</td>
+                <td>上升</td>
+                <td><a href="">贴吧</a> <a href="">百度</a> <a href="">百科</a> </td>
+            </tr>
+        </tbody>
+
+
+    </table>
+    <!-- 合并单元格：
+    跨行合并：rowspan=""
+    跨列合并：colspan="" -->
+    <table border="2" width="120" height="40" align="centre">
+        <tr>
+            <td>1</td>
+            <td colspan="2">2</td>
+            <!-- <td>3</td> -->
+        </tr>
+        <tr>
+            <td rowspan="2">4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <!-- <td>4</td> -->
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

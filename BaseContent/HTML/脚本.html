@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+
+<body>
+
+    <script>
+        document.write("Hello World!")
+    </script>
+    <noscript>抱歉，你的浏览器不支持JavaScript！</noscript>
+    <script>
+        document.write("<p>这是一个段落。</p>");
+    </script>
+
+    <!-- 事件响应 -->
+    <p id="demo">
+        JavaScript 可以触发事件;就像按钮点击
+    </p>
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello,my Script!!";
+        }
+    </script>
+    <button type="button" onclick="myFunction()">please 点我</button>
+
+
+    <!-- 处理HTML样式 -->
+    <p id="chage">
+        改变颜色
+    </p>
+    <script>
+        function ChageFunction() {
+            x = document.getElementById("chage")
+            x.style.color = "#ff0000";
+        }
+    </script>
+    <button type="button" onclick="ChageFunction()">please 点我 改变颜色</button>
+
+
+</body>
+
+</html>

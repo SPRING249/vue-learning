@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子盒子在父盒子中水平垂直居中</title>
+    <style>
+        .box {
+            /* 标准流的盒子居中 */
+            /* margin: 0 auto; */
+            position: absolute;
+            /* 浏览器窗口的中心位置 */
+            left: 50%;
+            /* 盒子水平居于中心 */
+            /* margin-left: -150px; */
+            /* 绝对盒子垂直中心 */
+            top: 50%;
+            /* margin-top: -150px; */
+            /* CSS3:位移 */
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        .demo {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            margin: 20px;
+            padding: 20px;
+            /* border属于复合属性，中间用空格隔开,简写 */
+            border: 50px solid red;
+            border: 20px dashed black;
+            border: 10px dotted blue;
+            border-left: 10px solid red;
+            /* shift+alt+↓  复制到下一行*/
+            border-left: 10px solid red;
+        }
+        
+        .example1 {
+            /* 实际大小为400*400 */
+            width: 380px;
+            height: 380px;
+            background-color: green;
+            border: 10px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        内容部分
+    </div>
+    <div class="example1">
+        例子1
+    </div>
+
+</body>
+
+</html>

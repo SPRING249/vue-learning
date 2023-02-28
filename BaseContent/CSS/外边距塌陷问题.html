@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距合并-嵌套块级元素垂直外边距塌陷</title>
+    <style>
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            /* 塌陷问题:想要儿子离开，但是父亲也一起离开了 */
+            /* padding-top: 50px; */
+            margin-top: 50px;
+            /* 1.添加overflow */
+            /* overflow: hidden; */
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin-top: 100px;
+            /* 2.改成行内块元素 */
+            /* display: inline-block; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

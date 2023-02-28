@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航条—+二维码</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* 内减模式 */
+            box-sizing: border-box;
+        }
+        
+        .nav {
+            height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0 auto;
+        }
+        
+        .nav li {
+            float: left;
+            height: 40px;
+            width: 20%;
+            border-right: 1px solid #ccc;
+        }
+        
+        .nav li a {
+            /* 行内元素转成块元素宽高才可以生效 */
+            display: block;
+            height: 40px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+            color: #000;
+        }
+        /* .nav ul .last {
+            border-right: none;
+        } */
+        /* 子绝父相 */
+        
+        .nav ul .app {
+            position: relative;
+        }
+        
+        .nav ul .code {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            top: 40px;
+            /* 隐藏图片 */
+            display: none;
+        }
+        
+        .nav li a:hover img {
+            /* 鼠标悬停时显示图片 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">我要投资</a></li>
+            <li><a href="#">平台介绍</a></li>
+            <li><a href="#">新手专区</a></li>
+            <li><a href="#" class="app">手机微金所<img src="../img/code.jpg" alt="" class="code"></a></li>
+            <li class="last"><a href="#">个人中心</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

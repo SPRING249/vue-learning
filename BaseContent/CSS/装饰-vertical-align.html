@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直对齐方式</title>
+    <style>
+        /*     行内块和文字或者行内块和行内块对齐
+         vertical-align:垂直对齐方式
+            baseline 基线对齐
+            top 顶部对齐
+            middle 中部对齐
+            bottom 底部对齐 */
+        
+        input {
+            height: 50px;
+            /* 内减模式 */
+            box-sizing: border-box;
+            vertical-align: middle;
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+        
+        .father input {
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  -->
+    <input type="text"><input type="button" value="搜索">
+    <hr>
+    <img src="../img/code.jpg" alt=""><input type="text">
+    <hr>
+    <div class="father">
+        <input type="text" name="" id="">
+    </div>
+    <!-- 浏览器把行内和行内块标签当成文字处理，自动以基线对齐 -->
+
+</body>
+
+</html>

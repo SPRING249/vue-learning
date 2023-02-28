@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建假标签</title>
+    <style>
+        .father {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 水平居中+垂直居中 */
+            text-align: center;
+            line-height: 300px;
+        }
+        
+        .father::before {
+            /* 内容 必须添加；没有内容也要留空*/
+            content: '我是';
+            color: green;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: inline-block;
+            /* 水平居中+垂直居中 */
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        .father::after {
+            content: '元素';
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 网页中不重要装饰性的图 -->
+    <div class="father">
+        伪
+    </div>
+</body>
+
+</html>

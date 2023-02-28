@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素显示模式</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            display: inline-block;
+            /* display: inline; */
+        }
+        
+        span {
+            background-color: green;
+            display: block;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 块级显示块：各占一行；可以设置宽高,宽度和父级一样 -->
+    <div>11111</div>
+    <div>22222</div>
+    <hr>
+    <!-- 行内元素：一行可以显示多个,不换行，不可以设置宽高,尺寸和内容大小显示一样-->
+    <a href="#"></a>
+    <span>333</span>
+    <span>444</span>
+    <hr>
+    <!-- 行内块元素：一行可以显示多个，可以设置宽高 ；img-->
+    <img src="../img/02.jpg" alt="">
+    <img src="../img/IMG_2415.JPG" alt="">
+
+    <!-- 元素显示模式转换 display:block,inline-block,inline-->
+    <!-- 块级元素作为大容器，可以嵌套 ；p标签不要嵌套div、p,h
+        a标签内部可以嵌套除自己的任意元素
+    -->
+
+</body>
+
+</html>

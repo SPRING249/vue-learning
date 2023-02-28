@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .top {
+            height: 40px;
+            background-color: #333;
+        }
+        
+        .header {
+            width: 1226px;
+            height: 100px;
+            background-color: #ffc0cb;
+            /* 版心居中 */
+            margin: 0 auto;
+        }
+        
+        .content {
+            width: 1226px;
+            height: 460px;
+            background-color: green;
+            /* 版心居中 */
+            margin: 0 auto;
+        }
+        
+        .left {
+            width: 234px;
+            height: 460px;
+            background: #ffa500;
+            /* float元素版心居中不了，所以先设置一个大的div */
+            float: left;
+        }
+        
+        .right {
+            width: 992px;
+            height: 460px;
+            background-color: #87ceeb;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS书写顺序
+    1.浮动/display
+    2.盒子模型：margin border padding 宽高背景色
+    3.文字样式 -->
+    <div class="top">顶部标签</div>
+    <div class="header"></div>
+    <div class="content">
+        <div class="left">左青龙</div>
+        <div class="right">右白虎</div>
+    </div>
+
+</body>
+
+</html>
