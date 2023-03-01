@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原始值和引用值</title>
+    <script>
+        <!-- 1.创建一个对象，保存在变量中-->
+        let person=new Object();
+        // 2.该变量添加了一个name的属性
+        person.name='Nicholas';
+        console.log(person.name)
+        //     传递参数
+        function addTen(num){
+            num+=10;
+            return num;
+        }
+        let count=20;
+        let result =addTen(count)
+        console.log(count)//20
+        console.log(result)//30
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
