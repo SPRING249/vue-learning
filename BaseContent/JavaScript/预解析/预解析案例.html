@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <script>
+        //example1
+        f1()
+        console.log(c)
+        console.log(b)
+        console.log(a)
+
+        function f1() {
+            let a = b = c = 9
+            //相当于var a=9 ;b=9;c=9;   b和c为全局变量
+            //集体声明：var a=9,b=9,c=9;   a,b,c都为局部变量
+            console.log(a)
+            console.log(b)
+            console.log(c)
+        }//9 9 9 9 9 报错（a--undefined）
+    </script>
+</head>
+<body>
+
+</body>
+</html>
