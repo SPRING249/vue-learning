@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历对象属性</title>
+    <script>
+        //key:value
+        let obj = {
+            uname: '张三',
+            age: 18,
+            sex: '男',
+            sayHi: function () {
+                console.log('hi~')
+            }
+        }
+        // for...in ...遍历对象
+        for (let k in obj) {
+            console.log(k)//变量，得到属性名
+            console.log(obj[k])//得到属性值
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
