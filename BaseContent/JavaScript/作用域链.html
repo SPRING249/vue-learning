@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域链</title>
+    <script>
+        //作用域链:根据在内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问
+        let num = 10;
+
+        function fn() {
+            let num = 20
+
+            function fun() {
+                //采取就近原则的方式来查找变量最终的值。
+                console.log(num)//20
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

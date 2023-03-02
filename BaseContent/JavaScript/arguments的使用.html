@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <title>arguments的使用</title>
   <script>
-<!--    存储了所有传递过来的实参-->
+// <!--    存储了所有传递过来的实参
+//         只有函数才有arguments对象-->
       function fn(){
         console.log(arguments)
         console.log(arguments.length)
         console.log(arguments[2])
         //按照数组的方式遍历
+          for(let i=0; i<arguments.length; i++){
+              console.log(arguments[i])
+          }
       }
       fn(1,2,3)
   //     伪数组：具有数组的length属性,按照索引方式存储，没有真正数组的一些方法pop(),push()
+  // 利用函数球任意个数的最大值
+    function getMax(){
+        let max = arguments[0];
+        for (let i=0;i<arguments.length;i++){
+            if (arguments[i]>max){
+                max=arguments[i]
+            }
+        }
+        return max
+    }
+
+    console.log(getMax(1,2,3))
+    console.log(getMax(1,2,3,4,5,6))
   </script>
 </head>
 <body>

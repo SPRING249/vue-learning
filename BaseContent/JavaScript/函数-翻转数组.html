@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻转数组</title>
+  <script>
+    function Reverse(arr) {
+      let newArr=[]
+      for (let i=arr.length-1;i>=0;i--){
+        newArr[newArr.length]=arr[i]
+      }
+      return newArr
+    }
+    let arr1=Reverse([1,2,3,4])
+    console.log(arr1)
+  </script>
+</head>
+<body>
+
+</body>
+</html>
