@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性与监视</title>
+    <script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <!-- v-model 双向绑定 -->
+    姓：<input type="text" v-model="firstName"><br>
+    名：<input type="text" v-model="secondName"><br>
+    姓名：<span>{{firstName.slice(0,3)}}-{{secondName}}</span>
+  </div>
+</body>
+<script type="text/javascript">
+  Vue.config.productionTip = false
+  
+  new Vue({
+    el:'#root',
+    data:{
+        firstName:'张',
+        secondName:'三'
+    }
+  })
+</script>
+</html>

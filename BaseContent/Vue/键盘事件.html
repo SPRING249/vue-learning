@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <script src="./vue.js"></script>
+
+</head>
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h2>欢迎来到{{name}}</h2>
+        <input type="text" placeholder="按下回车提示输入" @keyup.enter="showInfo">
+        <input type="text" placeholder="按下回车提示输入" @keyup.delete="showInfo">
+        <!-- //没有提示，把焦点从当前元素切走必须配合keydown实现 shift、ctrl、tab,meta
+         系统修饰键：配合其他按键才有效果-->
+        <input type="text" placeholder="按下回车提示输入" @keydown.tab.y="showInfo">
+        <input type="text" placeholder="按下回车提示输入" @keyup.esc="showInfo">
+    </div>
+    <script>
+        Vue.config.productionTip = false
+
+        new Vue({
+            el:'#root',
+            data:{
+                name:'南京'
+            },
+            methods:{
+                showInfo(e){
+                    console.log(e.key)
+                    // console.log(e.keyCode)
+                    console.log(e.target.value)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
