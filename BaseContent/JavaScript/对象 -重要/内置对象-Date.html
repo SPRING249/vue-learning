@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+    <script>
+        //1.创建Date对象
+        let now = new Date()
+        //接收一个表示日期的字符串参数
+        let someDate = new Date(Date.parse("March 23,2023"))
+        console.log(someDate)
+        let someDate1 = new Date("March 3,2023")
+        console.log(someDate1)
+        
+        // GMT 时间 2005 年 5 月 5 日下午 5 点 55 分 55 秒
+        let allFives = new Date(Date.UTC(2005, 4, 5, 17, 55, 55));
+        console.log(allFives)
+        //起始时间
+        let start = Date.now()
+        
+        function sayHi() {
+            alert('hi')
+        }
+        
+        sayHi()
+        //结束时间
+        let stop = Date.now()
+        console.log(stop - start)
+        //2.继承的方法：重写了 toLocaleString()、toString()和 valueOf()方法。
+        let date1 = new Date(2019, 0, 1) //2019年1月1日
+        let date2 = new Date(2019, 1, 1)//2019年2月1日
+        console.log(date1 < date2)//true
+        console.log(date1 > date2)//false
+        
+        //3.日期格式化方法
+        let date = new Date()
+        console.log(date.getFullYear())
+    
+    </script>
+</head>
+<body>
+
+</body>
+</html>

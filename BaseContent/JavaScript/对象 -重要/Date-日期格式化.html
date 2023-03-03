@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日期格式化</title>
+    <script>
+        
+        // console.log(date.getFullYear())//返回当前日期的年
+        // console.log(date.getMonth() + 1) //返回的月份小一个月，记得月份+1
+        // console.log(date.getDate())//日
+        // console.log(date.getDay()) //周一返回1 周六返回7 周日返回0
+        
+        //
+        let date = new Date()
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let dates = date.getDate()
+        console.log('今天是' + year + '年' + month + '月' + dates + '日')
+        
+        function getTimer() {
+            let time = new Date()
+            let h = time.getHours()
+            h = h < 10 ? '0' + h : h
+            let m = time.getMinutes()
+            m = m < 10 ? '0' + m : m
+            let s = time.getSeconds()
+            s = s < 10 ? '0' + s : s
+            return h + ':' + m + ':' + s
+        }
+        
+        console.log(getTimer())
+    
+    </script>
+</head>
+<body>
+
+</body>
+</html>
