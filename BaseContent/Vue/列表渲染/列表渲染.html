@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <ul>
+        人员列表
+        <li v-for="(p,index) in persons" :key="index">
+            {{p.name}}-{{p.age}}
+        </li>
+    </ul>
+    <ul>
+        汽车信息
+        <li v-for="(value,k) in car" :key="k">
+            {{k}}--{{value}}
+        </li>
+    </ul>
+    <ul>
+        遍历字符串--用得少
+        <li v-for="(char,num) in str" :key="num">
+            {{num}}--{{char}}
+        </li>
+    </ul>
+
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    
+    new Vue({
+        el: '#root',
+        data: {
+            //遍历数组--使用次数最多
+            persons: [
+                {id: "001", name: "张三", age: 18},
+                {id: "002", name: "JOJO", age: 18},
+                {id: "003", name: "李思", age: 20}
+            ],
+            // 遍历对象
+            car: {
+                name: "胖头鱼",
+                price: '10w',
+                color: 'pink'
+            },
+            //遍历字符串
+            str: 'hello'
+            
+        }
+    })
+
+</script>
+</html>

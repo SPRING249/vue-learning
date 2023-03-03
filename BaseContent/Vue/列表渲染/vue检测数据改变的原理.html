@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue检测数据改变的原理</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<!-- Vue监视数据的原理：
+    1.vue会监视data中所有层次的数据
+
+    2.如何监测对象中的数据？
+    通过setter实现监视，且要在new Vue时就传入要监测的数据
+
+        对象中后追加的属性，Vue默认不做响应式处理
+        如需给后添加的属性做响应式，请使用如下API：
+        Vue.set(target,propertyName/index,value)
+        vm.$set(target,propertyName/index,value)
+    3.如何监测数组中的数据？
+        通过包裹数组更新元素的方法实现，本质就是做了两件事：
+        3.1.调用原生对应的方法对数组进行更新
+        3.2.重新解析模板，进而更新页面
+    4.在Vue修改数组中的某个元素一定要用如下方法：
+        4.1.使用这些API：push()、pop()、shift()、unshift()、splice()、sort()、reverse()
+            Vue.set() 或 vm.$set()
+            
+特别注意：Vue.set() 和 vm.$set() 不能给vm 或 vm的根数据对象（data等） 添加属性
+-->
+<div id="root">
+    <h2>学校名称：{{name}}</h2>
+    <h2>学校地址：{{address}}</h2>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    
+    new Vue({
+        el: '#root',
+        data: {
+            name: '南京',
+            address: '南京'
+            
+        }
+    })
+
+</script>
+</html>

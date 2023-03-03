@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>列表过滤</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h2>人员列表</h2>
+    <input type="text" placeholder="请输入名字" v-model="keyWord">
+    <ul>
+        <li v-for="(p,index) of filPersons" :key="index">
+            {{p.name}}-{{p.age}}-{{p.sex}}
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+    
+    new Vue({
+        el: '#root',
+        data: {
+            keyWord: '',
+            persons: [
+                {id: '001', name: '马冬梅', age: 19, sex: '女'},
+                {id: '002', name: '周冬雨', age: 20, sex: '女'},
+                {id: '003', name: '周杰伦', age: 21, sex: '男'},
+                {id: '004', name: '温兆伦', age: 22, sex: '男'}
+            ],
+            filPersons: []
+        },
+        computed: {
+            filPersons() {
+                //
+                return this.persons.filter((p) => {
+                    //判断字符串是否包含
+                    return p.name.indexOf(this.keyWord) !== -1
+                })
+            }
+        },
+        // //监视属性
+        // watch: {
+        //     keyWord: {
+        //         //初始化,调用handler一次
+        //         immediate: true,
+        //         //包过滤的新数组交给persons，不能直接修改
+        //         handler(val) {
+        //             this.filpersons = this.persons.filter((p) => {
+        //                 return p.name.indexOf(val) !== -1
+        //             })
+        //         }
+        //     }
+        // },
+    })
+</script>
+</body>
+</html>

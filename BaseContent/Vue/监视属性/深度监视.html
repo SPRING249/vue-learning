@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>深度监视</title>
-    <script src="vue.js"></script>
+    <script src="../vue.js"></script>
 </head>
 <body>
 <!-- 深度监视：
@@ -24,50 +24,50 @@
 </body>
 <script>
     Vue.config.productionTip = false
-
-    const vm=new Vue({
-        el:'#root',
-        data:{
-            isHot:true,
-            numbers:{
-                a:1,
-                b:1
+    
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            isHot: true,
+            numbers: {
+                a: 1,
+                b: 1
             }
         },
-        computed:{
-            info(){
-                return this.isHot?'炎热':'凉爽'
+        computed: {
+            info() {
+                return this.isHot ? '炎热' : '凉爽'
             }
         },
-        methods:{
-            changeWeather(){
-                this.isHot=!this.isHot
+        methods: {
+            changeWeather() {
+                this.isHot = !this.isHot
             }
         },
-        watch:{
-            isHot:{
+        watch: {
+            isHot: {
                 //初始化是让handler调用一下
-                immediate:true,
+                immediate: true,
                 //当isHot修改时，调用handler
-                handler(newValue,oldValue){
-                    console.log('isHot被修改了',newValue,oldValue)
+                handler(newValue, oldValue) {
+                    console.log('isHot被修改了', newValue, oldValue)
                 }
             },
             // 监视多级结构中某个属性的变化
-            'numbers.a':{
+            'numbers.a': {
                 handler() {
                     console.log('a被改变了')
                 }
             },
             //监视多级结构中所有属性的变化
             numbers: {
-                deep:true,
+                deep: true,
                 handler() {
                     console.log('numbers被改变了')
                 }
             }
         }
-
+        
     })
     // vm.$watch('isHot',{
     //     immediate:true,
