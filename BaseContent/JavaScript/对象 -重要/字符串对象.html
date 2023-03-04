@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串对象</title>
+    <script>
+        //基本包装类型就是把简单数据类型包装成为复杂数据类型
+        let arr = 'study'
+        console.log(arr.length)
+        //本质
+        // // 1.生成临时变量,把简单类型包装为复杂数据类型
+        // let temp = String('study')
+        // // 2.赋值给我们声明的字符变量
+        // str = temp
+        // // 3.销毁临时变量
+        // temp = null
+        // console.log(str)
+        
+        //字符串的不可变性：指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变了，内存中新开辟了一个内存空间。
+        
+        //根据字符串返回位置
+        let str = '天来春了，啦啦啦啦啦啦啦'
+        console.log(str.indexOf('春'))  //默认从0开始，结果为2
+        console.log(str.indexOf('啦', 2)) //从索引号为2的位置开始往后查找
+        
+        //查找字符串 “abcoefoxyozzopp” 中所有o出现的位置以及次数
+        let str1 = 'abcoefoxyozzopp'
+        let index = str1.indexOf('o') //o首次出现的索引号
+        let num = 0
+        while (index !== -1) {
+            console.log(index) //3,6,9,12
+            num++
+            index = str1.indexOf('o', index + 1)
+        }
+        console.log('o出现的次数是: ' + num);
+        
+        //判断一个字符串 “abcoefoxyozzopp” 中出现次数最多的字符，并统计其次数
+        let str2 = 'abcoefoxyozzopp'
+        let o = {}
+        for (let i = 0; i < str2.length; i++) {
+            let chars = str2.charAt(i) // chars 是 字符串的每一个字符,charAt 遍历每一个字符
+            // console.log(chars)
+            if (o[chars]) {
+                o[chars]++
+            } else {
+                o[chars] = 1
+            }
+        }
+        console.log(o)
+        //遍历对象
+        let max = 0
+        let ch = ''
+        for (let k in o) {
+            //k为属性名 o[k]为属性值
+            if (o[k] > max) {
+                max = o[k]
+                ch = k
+            }
+            console.log(ch)
+        }
+        console.log(max)
+        console.log('最多的字符是' + ch);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
