@@ -13,7 +13,11 @@
 <script>
     let data = {
         name: '尚硅谷',
-        address: '北京'
+        address: '北京',
+        student: {
+            name: '潘博文',
+            age: 17
+        }
     }
     //创建一个监视的实例对象，用于监视data中属性的变化
     const obs = new Observer(data)
