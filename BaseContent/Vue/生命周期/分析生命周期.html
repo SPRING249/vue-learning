@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分析生命周期</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h2>当前的值是：{{n}}</h2>
+    <button @click="add">点我n++</button>
+    <button @click="bye">点我销毁vm</button>
+</div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false
+    
+    new Vue({
+        el: '#root',
+        data: {
+            n: 1,
+        },
+        methods: {
+            add() {
+                console.log('add')
+                this.n++
+            },
+            bye() {
+                console.log('bye')
+                this.$destroy()
+            }
+        },
+        //1.挂载流程
+        //初始化生命周期、事件，数据代理还没有开始
+        //不可以通过vm访问到data中的数据，methods中的方法
+        beforeCreate() {
+            console.log('beforeCreate')
+            // console.log(this)
+        },
+        //可以通过vm访问到data中的数据，methods中的方法
+        created() {
+            console.log('created')
+            // console.log(this)
+            // debugger
+        },
+        //解析模板，生成虚拟DOM，页面尚未和数据保持同步
+        // 未经Vue编译的DOM，所有对DOM的操作最终都不实现
+        beforeMount() {
+            console.log('beforeMount')
+            // console.log(this)
+            // debugger
+        },
+        //将内存中的虚拟DOM转为真实DOM插入页面
+        // 经过Vue编译的DOM，所有对DOM的操作都有效
+        mounted() {
+            console.log('mounted')
+        },
+        //2.更新流程
+        // 页面和数据未同步
+        beforeUpdate() {
+            console.log('beforeUpdate')
+            // console.log(this)
+            // debugger
+        },
+        //新旧虚拟DOM相互比较
+        updated() {
+            console.log('updated')
+            // console.log(this)
+            // debugger
+        },
+        //vm中所有的: data、 methods、指令等等，都处于可用状态，马上要执行销毁过程一般在此阶段:关闭定时器、取消订阅消息解绑自定义事件等收尾操作
+        beforeDestroy() {
+            console.log('beforeDestroy')
+        },
+        destroyed() {
+            console.log('destroyed')
+        }
+        
+    })
+</script>
+</html>
