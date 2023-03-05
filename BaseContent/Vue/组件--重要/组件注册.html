@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件注册</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <!--
+        定义：用来实现局部功能的代码和资源的集合（html/css/js/image…）
+        为什么：一个界面的功能很复杂
+        作用：复用编码，简化项目编码，提高运行效率
+     -->
+    <!-- <my-component></my-component> -->
+    <my-parent></my-parent>
+</div>
+</body>
+<script>
+    // //全局注册
+    // let MyComponent = Vue.extend({
+    //     template: '<h1>This is a component</h1>'
+    // })
+    // Vue.component('my-component', MyComponent)
+    //局部注册
+    // let Child = Vue.extend({
+    //     template: '<h1>This is a component</h1>'
+    // })
+    let Parent = Vue.extend({
+        //组件定义时，一定不要写el配置项，因为最终所有的组件都要被一个vm管理，由vm决定服务于哪个容器。
+        template: '<div>' +
+                '<p>This is a parent component</p>{{name}} ' +
+                '<my-child></my-child>' +
+                ' </div>',
+        // components: {
+        //     'my-child': Child
+        // }
+        //data一定要写成函数形式
+        data() {
+            return {
+                name: '潘博文'
+            }
+        },
+        components: {
+            'my-child': {
+                template: '<h1>This is a component</h1>'
+            }
+        }
+    })
+    // Vue.component('my-parent', Parent)
+    
+    new Vue({
+        el: '#root',
+        //注册组件-局部注册
+        components: {
+            'my-parent': Parent
+        }
+        
+    })
+
+</script>
+</html>
