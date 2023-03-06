@@ -8,12 +8,8 @@ import Vue from 'vue'
 //引入APP组件，他是所有组件的父组件
 import App from './App.vue'
 
-Vue.config.productionTip = false
-
 //创建一个Vue实例对象--vm
 new Vue({
     //render函数
     render: h => h(App),
-    
-    
 }).$mount('#app')
