@@ -7,9 +7,6 @@
 import Vue from 'vue'
 //引入APP组件，他是所有组件的父组件
 import App from './App.vue'
-// import {mixin} from "@/mixin";
-//
-// Vue.mixin(mixin)
 
 //创建一个Vue实例对象--vm
 new Vue({

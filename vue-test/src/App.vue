@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 v-text="msg" ref="title"></h1>
-    <button @click="showDOM" ref="btn">点我输出上访的DOM元素</button>
-    <MySchool ref="sch"></MySchool>
-    <!--:age==v-bind : 18为number 类型-->
-    <my-student name="潘博文" sex="女" :age="18"></my-student>
+    <h1>{{ msg }}</h1>
+    <my-school></my-school>
+    <hr>
+    <my-student></my-student>
+
   </div>
 </template>
 
@@ -22,13 +22,7 @@ export default {
       msg: '欢迎学习Vue'
     }
   },
-  methods: {
-    showDOM() {
-      console.log(this.$refs.title) //获取真是DOM元素
-      console.log(this.$refs.btn)
-      console.log(this.$refs.sch) //School组件的实例
-    }
 
-  }
+
 }
 </script>
