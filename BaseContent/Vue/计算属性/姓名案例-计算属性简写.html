@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>计算属性简写</title>
-    <script src="./vue.js"></script>
+    <script src="../vue.js"></script>
 </head>
 <body>
 <div id="root">
     <!-- v-model 双向绑定 -->
     姓：<input type="text" v-model="firstName"><br>
     名：<input type="text" v-model="secondName"><br>
-    姓名：<span>{{fullName}}</span>/
+    姓名：<span>{{ fullName }}</span>/
 
 </div>
 
@@ -18,14 +18,14 @@
 <script type="text/javascript">
     Vue.config.productionTip = false
 
-    const vm=new Vue({
-        el:'#root',
-        data:{
-            firstName:'张',
-            secondName:'三'
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            firstName: '张',
+            secondName: '三'
         },
         //只读不改时可以修改
-        computed:{
+        computed: {
             // fullName:{
             //     get(){
             //         console.log('get被调用了')
@@ -34,9 +34,9 @@
             //     },
             // }
             //只有get读取没有set 修改时才能简写
-            fullName(){
+            fullName() {
                 console.log('get被调用了')
-                return this.firstName+'-'+this.secondName
+                return this.firstName + '-' + this.secondName
             }
         }
 

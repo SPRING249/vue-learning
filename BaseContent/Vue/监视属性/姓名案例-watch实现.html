@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>计算属性与监视属性</title>
-    <script src="./vue.js"></script>
+    <script src="../vue.js"></script>
 </head>
 <body>
 <!-- computed和watch之间的区别：
@@ -20,7 +20,7 @@
     <!-- v-model 双向绑定 -->
     姓：<input type="text" v-model="firstName"><br>
     名：<input type="text" v-model="secondName"><br>
-    姓名：<span>{{fullName}}</span>
+    姓名：<span>{{ fullName }}</span>
 
 </div>
 
@@ -28,20 +28,20 @@
 <script type="text/javascript">
     Vue.config.productionTip = false
 
-    const vm=new Vue({
-        el:'#root',
+    const vm = new Vue({
+        el: '#root',
         // data里的值为属性
-        data:{
-            firstName:'张',
-            secondName:'三',
-            fullName:'张-三'
+        data: {
+            firstName: '张',
+            secondName: '三',
+            fullName: '张-三'
         },
-        watch:{
-            firstName(newValue,oldValue){
-                this.fullName=newValue+'-'+this.secondName
+        watch: {
+            firstName(newValue, oldValue) {
+                this.fullName = newValue + '-' + this.secondName
             },
-            secondName(newValue,oldValue){
-                this.fullName=this.firstName+'-'+newValue
+            secondName(newValue, oldValue) {
+                this.fullName = this.firstName + '-' + newValue
             }
         }
 

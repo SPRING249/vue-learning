@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>姓名案例-methods实现</title>
-    <script src="./vue.js"></script>
+    <script src="../vue.js"></script>
 </head>
 <body>
 <div id="root">
     <!-- v-model 双向绑定 -->
     姓：<input type="text" v-model="firstName"><br>
     名：<input type="text" v-model="secondName"><br>
-    姓名：<span>{{fullName()}}</span>
+    姓名：<span>{{ fullName() }}</span>
     <button @click="fullName()">点我</button>
 </div>
 </body>
@@ -18,14 +18,14 @@
     Vue.config.productionTip = false
 
     new Vue({
-        el:'#root',
-        data:{
-            firstName:'张',
-            secondName:'三'
+        el: '#root',
+        data: {
+            firstName: '张',
+            secondName: '三'
         },
-        methods:{
-            fullName(){
-                return this.firstName+'-'+this.secondName
+        methods: {
+            fullName() {
+                return this.firstName + '-' + this.secondName
             }
         }
     })

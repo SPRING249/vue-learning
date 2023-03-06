@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>计算属性</title>
-    <script src="./vue.js"></script>
+    <script src="../vue.js"></script>
 </head>
 <body>
 <!--计算属性：
@@ -27,7 +27,7 @@
     <!-- v-model 双向绑定 -->
     姓：<input type="text" v-model="firstName"><br>
     名：<input type="text" v-model="secondName"><br>
-    姓名：<span>{{fullName}}</span>
+    姓名：<span>{{ fullName }}</span>
 
 </div>
 
@@ -35,29 +35,29 @@
 <script type="text/javascript">
     Vue.config.productionTip = false
 
-    const vm=new Vue({
-        el:'#root',
+    const vm = new Vue({
+        el: '#root',
         // data里的值为属性
-        data:{
-            firstName:'张',
-            secondName:'三'
+        data: {
+            firstName: '张',
+            secondName: '三'
         },
         //计算属性
-        computed:{
-            fullName:{
+        computed: {
+            fullName: {
                 //当有人读取fullname，get就会被调用，返回值就作为fullname的值
                 // get什么时候被调用？1.初次读取fullname时被调用。2.所依赖的数据发生变化时
-                get(){
+                get() {
                     console.log('get被调用了')
                     console.log(this)//此处的this为vm
-                    return this.firstName+'-'+this.secondName
+                    return this.firstName + '-' + this.secondName
                 },
                 //set当fullname被修改时调用
-                set(value){
-                    console.log('set',value)
-                    const  arr=value.split('-')
-                    this.firstName=arr[0]
-                    this.secondName=arr[1]
+                set(value) {
+                    console.log('set', value)
+                    const arr = value.split('-')
+                    this.firstName = arr[0]
+                    this.secondName = arr[1]
                 }
             }
         }
