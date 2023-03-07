@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件三要素</title>
+</head>
+<body>
+<!--    事件：
+    1.触发— 响应机制。
+        网页中的每个元素都可以产生某些可以触发 JavaScript 的事件，
+        例如，我们可以在用户点击某按钮时产生一个事件，然后去执行某些操作。
+    2.事件三要素：事件源、事件类型、事件处理程序
+
+-->
+<!--<button class="btn">事件三要素</button>-->
+<button id="btn">事件三要素</button>
+<script>
+    //2.1.被触发的对象
+    // let btn = document.getElementsByClassName('.btn')
+    let btn = document.getElementById('btn')
+    //2.2.如何触发、什么事件
+    //2.3.通过一个函数复制的方式 完成
+    btn.onclick = function () {
+        alert('你好呀')
+    }
+
+
+</script>
+</body>
+</html>

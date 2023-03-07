@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H5新增获取元素方式</title>
+</head>
+<body>
+<div class="box">盒子</div>
+<div class="box">盒子</div>
+<div id="nav">
+    <ul>
+        <li>首页</li>
+        <li>产品</li>
+    </ul>
+</div>
+<script>
+    //1.getElementsByClassName 根据类名获得某些元素集合
+    let boxs = document.getElementsByClassName('box')
+    console.log(boxs) //[div.box, div.box]
+    //2.根据制定选择器返回第一个元素对象
+    let firstBox = document.querySelector('.box')
+    console.log(firstBox)  //<div class="box">盒子</div>
+    let nav = document.querySelector('#nav')
+    console.log(nav)
+    let li = document.querySelector('li')
+    console.log(li)
+    //3.根据选择器返回所有元素
+    let allBox = document.querySelectorAll('.box')
+    console.log(allBox)
+</script>
+</body>
+</html>

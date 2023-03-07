@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取页面元素</title>
+</head>
+<body>
+<!--    1.根据ID获取 document.getElementById
+
+-->
+<div id="test">
+    获取页面元素
+</div>
+<script>
+    //页面从上向下夹在，所以标签在script前面
+    //返回的是一个元素对象
+    let test = document.getElementById('test')  //<div id="test">获取页面元素</div>
+    console.log(test)
+    console.log(typeof test) //object
+    //打印返回的元素对象，更好的查看里面的属性和方法
+    console.dir(test)   //div#test
+
+</script>
+</body>
+</html>

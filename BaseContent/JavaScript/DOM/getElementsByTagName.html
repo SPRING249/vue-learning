@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementByTagName</title>
+</head>
+<body>
+<ul>
+    <li>获取某类标签元素11</li>
+    <li>获取某类标签元素22</li>
+    <li>获取某类标签元素33</li>
+    <li>获取某类标签元素44</li>
+    <li>获取某类标签元素55</li>
+</ul>
+<ol id="id">
+    <li>不同父元素获取标签</li>
+    <li>不同父元素获取标签</li>
+    <li>不同父元素获取标签</li>
+    <li>不同父元素获取标签</li>
+    <li>不同父元素获取标签</li>
+</ol>
+<script>
+    //返回带有指定标签名的对象的集合
+    let lis = document.getElementsByTagName('li')
+    //1.返回的是获取元素对象的集合，以伪数组的形式存储
+    console.log(lis)    // [li, li, li, li, li]
+    console.log(lis[0])
+    //2.依次打印里面的元素对象
+    for (let i = 0; i < lis.length; i++) {
+        console.log(lis[i])
+    }
+    //3.只有一个li标签，同上
+    //4.页面中没有元素，返回一个空的伪数组
+    //5. 错误：let son = ol.getElementsByTagName('li')
+    // let ol = document.getElementsByTagName('ol')
+    // console.log(ol.getElementsByTagName('li'))
+    let ol = document.getElementsById('ol')
+    console.log(ol.getElementsByTagName('li'))
+</script>
+</body>
+</html>
