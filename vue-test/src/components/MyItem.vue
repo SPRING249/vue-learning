@@ -15,7 +15,18 @@
 
 <script>
 export default {
-  name: "MyItem"
+  name: "MyItem",
+  props: ['todo', 'checkTodo', 'deleteTodo'],
+  methods: {
+    handleCheck(id) {
+      this.checkTodo(id)
+    },
+    handleDelete(id, title) {
+      if (confirm("确定删除任务：" + title + "吗？")) {
+        this.deleteTodo(id)
+      }
+    }
+  }
 }
 </script>
 

@@ -17,7 +17,8 @@ export default {
   name: "MyList",
   components: {
     MyItem
-  }
+  },
+  props: ['todos', 'checkTodo', 'deleteTodo']
 }
 </script>
 

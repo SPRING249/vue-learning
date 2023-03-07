@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import {nanoid} from 'nanoid'
+
 export default {
   name: "MyHeader",
   data() {
@@ -15,6 +17,18 @@ export default {
       title: ''
     }
   },
+  props: ['addTodo'],
+  methods: {
+    add() {
+      // 删除字符串的头尾空格
+      if (!this.title.trim()) return
+      // nanoid --唯一ID生成器
+      const todoObj = {id: nanoid(), title: this.title, done: false}
+      this.addTodo(todoObj)
+      // 回车键添加成功后，清空todo
+      this.title = ''
+    }
+  }
 }
 </script>
 

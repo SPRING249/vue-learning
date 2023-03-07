@@ -12,7 +12,29 @@
 
 <script>
 export default {
-  name: "MyFooter"
+  name: "MyFooter",
+  props: ['todos', 'checkAllTodo', 'clearAllTodo'],
+  computed: {
+    doneTotal() {
+      return this.todos.reduce((pre, todo) => pre + (todo.done ? 1 : 0), 0)
+    },
+    total() {
+      return this.todos.length
+    },
+    isAll: {
+      get() {
+        return this.total === this.doneTotal && this.total > 0
+      },
+      set(value) {
+        this.checkAllTodo(value)
+      }
+    }
+  },
+  methods: {
+    clearAll() {
+      this.checkAllTodo()
+    }
+  }
 }
 </script>
 

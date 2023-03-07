@@ -19,6 +19,41 @@ export default {
   name: "App",
   components: {
     MyFooter, MyList, MyHeader
+  },
+  data() {
+    return {
+      todos: [
+        {id: '001', title: '学习', done: false},
+        {id: '002', title: '睡觉', done: false},
+        {id: '003', title: '看电视', done: false}
+      ]
+    }
+  },
+  methods: {
+    //添加一个todo
+    addTodo(todoObj) {
+      this.todos.unshift(todoObj)
+    },
+    //勾选或取消勾选一个TODO
+    checkTodo(id) {
+      this.todos.forEach((todo) => {
+        if (todo.id === id) {
+          todo.done = !todo.done
+        }
+      })
+    },
+    //删除一个todo
+    deleteTodo(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id)
+    },
+    //全选or取消勾选
+    checkAllTodo(done) {
+      this.todos.forEach(todo => todo.done = done)
+    },
+    //删除已完成的todo
+    clearAllTodo() {
+      this.todos = this.todos.filter(todo => !todo.done)
+    }
   }
 }
 </script>
