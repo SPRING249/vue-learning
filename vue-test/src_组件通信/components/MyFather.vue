@@ -5,7 +5,7 @@
     <p>儿子的名字：{{ sonName }}</p>
     <h1>使用$event参数</h1>
     <my-son :name="sonName" @updateDemo="money-=$event" @update:name="sonName=$event"></my-son>
-    <h1>使用方法接收参数</h1>
+    <h1>使用自定义方法接收参数</h1>
     <my-son :name="sonName" v-on:updateDemo="spendMoney" @update:name="sonName=$event"></my-son>
     <my-son :name="sonName" @updateDemo="spendMoney" @update:name="sonName=$event"></my-son>
     <h1>使用sync双向绑定</h1>

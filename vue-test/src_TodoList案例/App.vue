@@ -22,8 +22,11 @@ export default {
   },
   data() {
     return {
-      //若localStorage中存有'todos'则从localStorage中取出，否则初始为空数组
-      todos: JSON.parse(localStorage.getItem('todos')) || []
+      todos: [
+        {id: '001', title: '学习', done: false},
+        {id: '002', title: '睡觉', done: false},
+        {id: '003', title: '看电视', done: false}
+      ]
     }
   },
   methods: {
@@ -51,14 +54,6 @@ export default {
     //删除已完成的todo
     clearAllTodo() {
       this.todos = this.todos.filter(todo => !todo.done)
-    }
-  },
-  watch: {
-    todos: {
-      deep: true,
-      handler(value) {
-        localStorage.setItem('todos', JSON.stringify(value))
-      }
     }
   }
 }
