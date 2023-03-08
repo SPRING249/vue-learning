@@ -1,6 +1,9 @@
 <template>
   <li>
     <label>
+      <!--勾选TODO：:checked="todo.done"---初始化显示
+      交互：绑定事件@click
+      -->
       <input type="checkbox"
              :checked="todo.done"
              @click="handleCheck(todo.id)"/>
@@ -16,6 +19,7 @@
 <script>
 export default {
   name: "MyItem",
+  //声明接收TODO对象，收到以后在vc上
   props: ['todo', 'checkTodo', 'deleteTodo'],
   methods: {
     handleCheck(id) {
@@ -65,6 +69,7 @@ li:last-child {
   border-bottom: none;
 }
 
+/*悬停效果*/
 li:hover {
   background-color: #eee;
 }

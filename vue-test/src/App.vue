@@ -30,11 +30,12 @@ export default {
     }
   },
   methods: {
-    //添加一个todo
+    //APP父添加一个todo，传给子MyHeader
     addTodo(todoObj) {
+      //1.操作data中的数据，数据变化vue重新解析模板，四个TODO交给myList
       this.todos.unshift(todoObj)
     },
-    //勾选或取消勾选一个TODO
+    //勾选或取消勾选一个TODO，先给MyList
     checkTodo(id) {
       this.todos.forEach((todo) => {
         if (todo.id === id) {

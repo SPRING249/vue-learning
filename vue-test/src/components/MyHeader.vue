@@ -20,10 +20,12 @@ export default {
   props: ['addTodo'],
   methods: {
     add() {
-      // 删除字符串的头尾空格
+      // 校验数据：删除字符串的头尾空格
       if (!this.title.trim()) return
       // nanoid --唯一ID生成器
+      //将用户的输入包装成一个对象
       const todoObj = {id: nanoid(), title: this.title, done: false}
+      //通知APP组件去添加一个TODO对象
       this.addTodo(todoObj)
       // 回车键添加成功后，清空todo
       this.title = ''

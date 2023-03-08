@@ -1,5 +1,8 @@
 <template>
   <ul class="todo-main">
+    <!--2.MyList收到todos重新解析模板，出现了四个虚拟DOM
+        3.虚拟DOM比较，:key="todo.id",页面初始TODO都不是重新生成的，而是之前的
+    -->
     <MyItem
         v-for="todo in todos"
         :key="todo.id"

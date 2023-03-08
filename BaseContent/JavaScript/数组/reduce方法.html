@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reduce方法</title>
+    <script>
+        let arr = [1, 2, 3, 4];
+        let sum = arr.reduce(function (prev, cur, index, arr) {
+            console.log(prev, cur, index);//121 332 643
+            return prev + cur;
+
+        })
+        console.log(arr, sum);
+        //普通求和、求乘积
+        let sum1 = arr.reduce((x, y) => x + y)
+        let mul = arr.reduce((x, y) => x * y)
+        console.log(sum1, mul)
+        //数组去重
+        let arr1 = [1, 2, 2, 3, 4, 4, 5]
+        let newArr = arr1.reduce((pre, cur) => {
+            if (!pre.includes(cur)) {
+                return pre.contact(cur)
+            } else {
+                return pre
+            }
+
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
