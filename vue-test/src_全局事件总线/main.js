@@ -7,19 +7,14 @@
 import Vue from 'vue'
 //引入APP组件，他是所有组件的父组件
 import App from './App.vue'
-// import {mixin} from "@/mixin";
-//
-// Vue.mixin(mixin)
-// //引入插件
-// import plugins from "@/plugins";
-// //应用插件
-// Vue.use(plugins)
-//创建一个Vue实例对象--vm
+
+Vue.config.productionTip = false
+
 new Vue({
     //render函数
     render: h => h(App),
+    //beforeCreate中模板未解析，且this是vm
     beforeCreate() {
-        //安装全局事件总线
-        Vue.prototype.$bus = this
+        Vue.prototype.$bus = this //安装全局事件总线
     }
 }).$mount('#app')

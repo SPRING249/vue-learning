@@ -8,15 +8,25 @@
 </template>
 
 <script>
+
 export default {
   name: "MySchool",
   data() {
     return {
       name: '尚硅谷',
-      address: '南京'
+      address: '南京',
+      data: ''
     }
   },
-  mounted: {}
+  mounted() {
+    this.$bus.$on('demo', (data) => {
+      console.log('我是School组件，收到了数据', data)
+    })
+  },
+  beforeDestroy() {
+    this.$bus.$off('demo')
+  }
+
 
 }
 </script>

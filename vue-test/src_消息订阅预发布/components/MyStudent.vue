@@ -3,11 +3,14 @@
     <h1>学生信息</h1>
     <h2>学生姓名：{{ name }}</h2>
     <h2>学生性别：{{ sex }}</h2>
-
+    <button @click="sendStudentName">发送姓名给School组件</button>
   </div>
 </template>
 
 <script>
+//发布消息
+import pubsub from 'pubsub-js'
+
 export default {
   name: "MyStudent",
   data() {
@@ -16,7 +19,12 @@ export default {
       sex: '女'
     }
   },
-  mounted: {}
+  methods: {
+    sendStudentName() {
+      pubsub.publish('demo', 666)
+    }
+  }
+
 }
 </script>
 

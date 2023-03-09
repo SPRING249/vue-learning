@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function和Object关系</title>
+    <script>
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+
+        }
+
+        Person.prototype.running = function (info) {
+            console.log(info)
+
+        }
+        const obj = {}
+        const person = new Person("潘博文", 18)
+        const student = new Person("dog", 17)
+
+        console.log(obj.__proto__ === Object.prototype)
+        //Object的构造函数
+        console.log(Object.constructor === Function)
+        console.log(Function.prototype.__proto__ === Object.prototype)
+        console.log(Function.constructor === Function)
+        console.log(Person.__proto__.constructor.__proto__ === Function.prototype)
+        console.log(student.__proto__.__proto__.constructor.__proto__ === Function.prototype)
+
+        console.log(Function.constructor.__proto__ === Function.prototype)
+        console.log(Object.constructor === Function.constructor)
+        console.log(Object instanceof Function)
+        console.log(Function instanceof Object)
+        console.log(Function.prototype.__proto__ === Object.prototype)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
