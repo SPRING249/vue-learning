@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型-构造函数模式</title>
+    <script>
+        function Person(name, age, info) {
+            this.name = name
+            this.age = age
+
+            this.running = function () {
+                console.log(info)
+            }
+
+        }
+
+        const person = new Person("mon", 18, "我想睡觉")
+        const student = new Person("pan", 18, "我要学习")
+
+        person.running()
+        student.running()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

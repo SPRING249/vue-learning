@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型模式</title>
+    <script>
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        Person.prototype.running = function (info) {
+            console.log(info)
+        }
+        // 在这里,把方法running定义在了Person的prototype属性上
+        // person和student共享同一个原型方法running,指向的是同一快内存空间
+        const person = new Person("mon", 18)
+        const student = new Person("pan", 18)
+
+        console.log(person.running === student.running) //false
+
+        person.running('我要睡觉')
+        student.running('我想学习')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

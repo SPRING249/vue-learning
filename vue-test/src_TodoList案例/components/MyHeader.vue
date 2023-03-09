@@ -17,7 +17,7 @@ export default {
       title: ''
     }
   },
-  props: ['addTodo'],
+  // props: ['addTodo'],
   methods: {
     add() {
       // 校验数据：删除字符串的头尾空格
@@ -26,7 +26,8 @@ export default {
       //将用户的输入包装成一个对象
       const todoObj = {id: nanoid(), title: this.title, done: false}
       //通知APP组件去添加一个TODO对象
-      this.addTodo(todoObj)
+      // this.addTodo(todoObj)
+      this.$emit('addTodo', todoObj)
       // 回车键添加成功后，清空todo
       this.title = ''
     }
