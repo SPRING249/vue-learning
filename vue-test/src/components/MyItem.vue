@@ -11,13 +11,16 @@
       <input v-show="todo.isEdit"
              type="text"
              :value="todo.title"
-             @blur="handleBlur(todo,$emit)">
+             @blur="handleBlur(todo,$event)">
     </label>
     <button class="btn btn-danger"
             @click="handleDelete(todo.id,todo.title)">
       删除
     </button>
-    <button class="btn btn-edit" @click="handleEdit(todo)">
+    <button class="btn btn-edit"
+            @click="handleEdit(todo)"
+            v-show="!todo.isEdit"
+            ref="inputTitle">
       编辑
     </button>
   </li>
@@ -49,16 +52,27 @@ export default {
       if (todo.hasOwnProperty.call('isEdit')) {
         todo.isEdit = true
       } else {
-        console.log('@@')
         this.$set(todo, 'isEdit', true)
       }
-
-      console.log(todo)
+      // setTimeout(() => {
+      //   //获取组件实例对象
+      //   this.$refs.inputTitle.focus()
+      //
+      // }, 200)
+      //   在下一次DOM更新后后再执行回调
+      // this.$nextTick(function () {
+      //   this.$refs.inputTitle.focus()
+      // })
+      this.$nextTick(() => {
+        this.todo.forEach((item, index) => {
+          this.$refs.inputTitle[index].focus()
+        })
+      })
     },
     //失去焦点回调（真正执行修改逻辑）
     handleBlur(todo, e) {
       todo.isEdit = false
-      console.log('updateTodo', todo.id, e.target.value)
+      // console.log('updateTodo', todo.id, e.target.value)
       this.$bus.$emit('updateTodo', todo.id, e.target.value)
     }
   }

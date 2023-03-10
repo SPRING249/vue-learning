@@ -48,6 +48,12 @@ export default {
     deleteTodo(msgName, id) {
       this.todos = this.todos.filter(todo => todo.id !== id)
     },
+    //更新一个TODO
+    updateTodo(id, title) {
+      this.todos.forEach((todo) => {
+        if (todo.id === id) todo.title = title
+      })
+    },
     //全选or取消勾选
     checkAllTodo(done) {
       this.todos.forEach(todo => todo.done = done)
@@ -59,11 +65,13 @@ export default {
   },
   mounted() {
     this.$bus.$on('checkTodo', this.checkTodo)
+    this.$bus.$on('updateTodo', this.updateTodo)
     // this.$bus.$on('deleteTodo', this.deleteTodo)
     this.pubId = pubsub.subscribe('deleteTodo', this.deleteTodo)
   },
   beforeDestroy() {
     this.$bus.$off('checkTodo')
+    this.$bus.$off('updateTodo')
     // this.$bus.$off('deleteTodo')
     pubsub.unsubscribe(this.pubId)
   }
