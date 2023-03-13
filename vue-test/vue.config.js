@@ -4,7 +4,8 @@ module.exports = defineConfig({
     //关闭语法检查
     lintOnSave: false,
     
-    //开启代理服务器:不能配置多个代理
+    //跨域
+    //开启代理服务器:不能配置多个代理，
     // devServer: {
     //     proxy: "http://localhost:5000"
     // },
