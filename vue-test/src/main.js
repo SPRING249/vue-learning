@@ -7,13 +7,14 @@
 import Vue from 'vue'
 //引入APP组件，他是所有组件的父组件
 import App from './App.vue'
+//引入store
+import store from '../src/store'
+
+Vue.config.productionTip = false
+
 
 new Vue({
     //render函数
     render: h => h(App),
-    //配置全局事件总线
-    beforeCreate() {
-        Vue.prototype.$bus = this
-    }
-    
+    store
 }).$mount('#app')
