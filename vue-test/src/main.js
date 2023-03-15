@@ -7,19 +7,18 @@
 import Vue from 'vue'
 //引入APP组件，他是所有组件的父组件
 import App from './App.vue'
-//引入VueRouter
-import VueRouter from "vue-router";
-import router from "@/router";
+//引入Element-UI
+import ElementUI from "element-ui"
+import 'element-ui/lib/theme-chalk/index.css';	// 引入ElementUI全部样式
 
 
 Vue.config.productionTip = false
 
 //应用
-Vue.use(VueRouter)
+Vue.use(ElementUI)
 
 
 new Vue({
     //render函数
     render: h => h(App),
-    router: router
 }).$mount('#app')
