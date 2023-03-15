@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.call、apply应用场景</title>
+    <script>
+        //  求数组最大值最小值
+        let arr = [3, 5, 7, 9, 1, 2, 4]
+        console.log(Math.max.apply(null, arr))
+        console.log(Math.min.apply(null, arr))
+
+        // 将arguments转为真正的数组
+        function fn() {
+            // slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。
+            let arr = Array.prototype.slice.call(arguments)
+            arr.push(6)
+            return arr
+        }
+
+        console.log(fn(1, 2))  //[1,2,6]
+
+        //继承
+        function Person(userName, userAge) {
+            this.userName = userName
+            this.userAge = userAge
+        }
+
+        function Student(name, age, gender) {
+            Person.call(this, name, age)
+            this.gender = gender
+        }
+
+        let student = new Student('潘博文', 20, '女')
+        console.log("userName=" + student.userName, "userAge=" + student.userAge, "gender=" + student.gender)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.手写bind函数</title>
+    <script>
+        Function.prototype.myBind = function (context) {
+            let args = [...arguments].slice(1)//[6,3]
+            let fn = this
+            return function Fn() {
+                let bindArgs = Array.prototype.slice(arguments)
+                fn.apply(context, args.concat(bindArgs))
+            }
+        }
+
+        function Add(num1, num2) {
+            console.log(this)
+            console.log(num1 + num2)
+        }
+
+        function Sub(num1, num2) {
+            console.log(num1 - num2)
+        }
+
+        //bind返回一个新函数
+        // let newFun = Add.myBind(Sub, 6, 3)
+        // newFun()
+        //手动传参
+        let newFun = Add.myBind(Sub, 6)
+        newFun(3)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

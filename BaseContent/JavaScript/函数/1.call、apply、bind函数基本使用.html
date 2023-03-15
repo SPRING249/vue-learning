@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call、apply、bind函数</title>
+    <script>
+        //function.call(thisObj,arg1,arg2)
+        function add(a, b) {
+            console.log(this)
+            console.log(a + b)
+        }
+
+        function sub(a, b) {
+            console.log(a - b)
+        }
+
+        //通过call调用sub函数，this指向sub
+        add.call(sub, 3, 6)
+
+        //function.apply(thisObj,[argsArray])
+        add.apply(sub, [3, 5])
+
+        //function.bind(thisObj,arg1,arg2,...)
+        // 返回的是一个新的函数
+        const newFn = add.bind(sub, 3, 3)
+        newFn()
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
