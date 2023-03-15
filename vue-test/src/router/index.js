@@ -29,10 +29,10 @@ export default new VueRouter({
                             path: 'detail/:id/:title',  //使用占位符接收params参数
                             component: Detail,
                             //
-                            props(params) {
+                            props($route) {
                                 return {
-                                    id: params.id,
-                                    title: params.title
+                                    id: $route.params.id,
+                                    title: $route.params.title
                                 }
                                 
                             }

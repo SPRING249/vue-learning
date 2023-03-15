@@ -38,6 +38,30 @@ export default {
         {id: '003', title: '消息003'},
       ]
     }
+  },
+  methods: {
+    pushShow(m) {
+      console.log(this.$router)
+      this.$router.push({
+        name: 'xiangqing',
+        query: {
+          id: m.id,
+          title: m.title
+        }
+      })
+    },
+    replaceShow(m) {
+      this.$router.replace({
+        name: 'xiangqing',
+        query: {
+          id: m.id,
+          title: m.title
+        }
+      })
+    }
+  },
+  beforeDestroy() {
+    console.log('Message组件即将诶销毁了')
   }
 }
 </script>
