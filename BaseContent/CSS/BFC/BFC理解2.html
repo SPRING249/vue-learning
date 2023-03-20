@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC理解2</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        /*显示背景颜色，触发BFC*/
+        overflow: hidden;
+        display: inline-block;
+        background-color: pink;
+    }
+
+    section {
+        width: 200px;
+        height: 200px;
+        background-color: deeppink;
+        margin: 20px;
+    }
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+</style>
+<body>
+<div class="box">
+    <section class="left">left</section>
+    <section class="right">right</section>
+</div>
+</body>
+</html>

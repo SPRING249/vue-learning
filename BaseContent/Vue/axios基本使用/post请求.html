@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post请求</title>
+    <script>
+        this.$axios.post('/url', {
+            id: 1
+        }).then(res => {
+            console.log(res.data)
+        }, err => {
+            console.log(err)
+        })
+
+        $axios({
+            method: 'post',
+            url: '/url',
+            data: {
+                id: 1
+            }
+        }).then(res => {
+            console.log(res.data)
+        }, err => {
+            console.log(err)
+        })
+
+        let data = {}
+        let formdata = new FormData()
+        for (let key in data) {
+            formdata.append(key, data[key])
+        }
+        this.$axios.post('/goods.json', formdata).then(res => {
+            console.log(res.data)
+        }, err => {
+            console.log(err)
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

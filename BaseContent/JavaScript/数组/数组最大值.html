@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组最大值</title>
+    <script>
+        const arr = [100, 20, 30, 200, 40, 90]
+        console.log(getMax(arr))
+
+        function getMax(arr) {
+            // return Math.max(...arr)
+            return Math.max.apply(null, arr)
+        }
+
+        function getMax(arr) {
+            arr.sort((n1, n2) => {
+                return n2 - n1
+            })
+            return arr[0]
+        }
+
+        function getMax(arr) {
+            return arr.reduce((n1, n2) => {
+                return n1 > n2 ? n1 : n2
+            })
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
