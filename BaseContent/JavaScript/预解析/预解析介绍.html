@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>预解析介绍</title>
-  <script>
-    // //1.
-    // console.log(num)//报错，undefined
-    //2.执行顺序：
-    // let num1;
-    // log(num1);
-    // num1=10
-    // console.log(num1)
-    // let num1 = 10
-    //3.
-    fun()//可写前可写后
-    function fun() {
-      console.log(11)//11
-    }
+    <meta charset="UTF-8">
+    <title>预解析介绍</title>
+    <script>
+        // //1.
+        // console.log(num)//报错，undefined
+        //2.执行顺序：
+        // let num1;
+        // log(num1); //undefined
+        // num1=10
+        // console.log(num1)
+        // let num1 = 10
+        //3.
+        fun()//可写前可写后
+        function fun() {
+            console.log(11)//11
+        }
 
-    //4.let fn;
-    // fu();
-    // fn=function(){
-    // console.log(22)
-    // }
-    let fn = function () {
-      console.log(22)//报错
-    }
-    fn()//正确位置
+        //4.let fn;
+        // fu();
+        // fn=function(){
+        // console.log(22)//报错
+        // }
+        let fn = function () {
+            console.log(22)
+        }
+        fn()//正确位置
 
 
-  </script>
+    </script>
 </head>
 <body>
 <!--   1.js运行分为两步：预解析+代码执行

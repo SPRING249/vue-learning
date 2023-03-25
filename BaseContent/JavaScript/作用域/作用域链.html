@@ -7,10 +7,11 @@
         //作用域链:根据在内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问
         let num = 10;
 
-        function fn() {
+        function fn() {//外部函数
             let num = 20
 
             function fun() {
+                //内部函数
                 //采取就近原则的方式来查找变量最终的值。
                 console.log(num)//20
             }
