@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.操作元素-修改内容</title>
+    <style>
+        div, p {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            color: #ffffff;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button>显示当前系统时间</button>
+<div>某个时间</div>
+<p></p>
+<script>
+    //    1.事件源-按钮
+    let btn = document.querySelector('button')
+    let div = document.querySelector('div')
+    // 2.注册事件
+    btn.onclick = function () {
+        div.innerText = getDate()
+    }
+
+    function getDate() {
+        let date = new Date()
+        // console.log(date.valueOf())
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let dates = date.getDate()
+        return '今天是' + year + '年' + month + '月' + dates + '日'
+    }
+
+    //元素可以不用添加事件
+    let p = document.querySelector('p')
+    p.innerText = getDate()
+</script>
+</body>
+</html>
