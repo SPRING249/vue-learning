@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.2.操作元素-改变属性</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<button id="fj1">风景1</button>
+<button id="fj2">风景2</button>
+
+<img src="/BaseContent/img/02.jpg" alt="">
+
+<script>
+    let img = document.querySelector('img')
+    let fj1 = document.getElementById('fj1')
+    let fj2 = document.getElementById('fj2')
+
+    fj1.onclick = function () {
+        img.src = '/BaseContent/img/02.jpg'
+    }
+    fj2.onclick = function () {
+        img.src = '/BaseContent/img/code.jpg'
+
+    }
+</script>
+</body>
+</html>
