@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.3.操作元素-分时问候案例</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<img src="/BaseContent/img/02.jpg">
+<div>
+    上午好
+</div>
+<script>
+    //    1.获取元素
+    let img = document.querySelector('img')
+    let div = document.querySelector('div')
+    // 2.得到当前小时数
+    let date = new Date()
+    let h = date.getHours()
+    // 3.判断小时数改变图片和文字信息
+    if (h < 12) {
+        img.src = '/BaseContent/img/01.jpg'
+        div.innerHTML = '上午好'
+    } else if (h < 18) {
+        img.src = '/BaseContent/img/02.jpg'
+        div.innerHTML = '下午好'
+    } else {
+        img.src = '/BaseContent/img/03.jpg'
+        div.innerHTML = '晚上好'
+    }
+
+</script>
+</body>
+</html>

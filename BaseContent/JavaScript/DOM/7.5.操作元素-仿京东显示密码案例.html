@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.5.操作元素-仿京东显示密码案例</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid red;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        @font-face {
+            font-family: 'iconfont';  /* Project id 3978759 */
+            src: url('//at.alicdn.com/t/c/font_3978759_vl4akba0s8g.woff2?t=1679893059143') format('woff2'),
+            url('//at.alicdn.com/t/c/font_3978759_vl4akba0s8g.woff?t=1679893059143') format('woff'),
+            url('//at.alicdn.com/t/c/font_3978759_vl4akba0s8g.ttf?t=1679893059143') format('truetype');
+        }
+
+        .icon-font {
+            font-family: "iconfont", serif;
+            position: absolute;
+            right: 30px;
+            top: 2px;
+            font-size: 24px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <label for="">
+        <i class="icon-font" v-if="flag===0">&#xe847</i>
+        <i class="icon-font">&#xe673</i>
+
+    </label>
+    <input type="password" name="" id="">
+</div>
+<script>
+    //    1，获取元素
+    let view = document.querySelector('i')
+    let pwd = document.querySelector('input')
+    let flag = 0
+    // 2.注册事件 处理程序
+    view.onclick = function () {
+        if (flag === 0) {
+            pwd.type = 'text'
+            flag = 1
+        } else {
+            pwd.type = 'password'
+            flag = 0
+        }
+
+    }
+</script>
+</body>
+</html>

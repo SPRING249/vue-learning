@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.7.仿淘宝关闭二维码案例</title>
+</head>
+<body>
+<div class="box">
+    淘宝二维码
+    <img src="/BaseContent/img/code.jpg" alt="">
+    <i class="close-btn">x</i>
+</div>
+<script>
+    let box = document.querySelector('.box')
+    let btn = document.querySelector('.close-btn')
+
+    // 2.注册事件 程序处理
+    btn.onclick = function () {
+        box.style.display = 'none'
+    }
+</script>
+</body>
+</html>
