@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+<button></button>
+</body>
+
+<script>
+  const myButton = document.querySelector("button");
+  myButton.onclick=function () {
+    alert("匿名函数,运行负载的代码以响应事件触发（如点击按钮）——使用事件处理程序");
+  };
+
+  const greeting = function () {
+    alert("匿名函数2");
+  }
+  greeting();
+</script>
+</html>
