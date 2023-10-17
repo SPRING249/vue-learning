@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            font-family: "helvetica neue", helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            border: 2px solid rgb(0 0 200 / 0.6);
+            background: rgb(0 0 200 / 0.6);
+            color: rgb(255 255 255 / 1);
+            box-shadow: 1px 1px 2px rgb(0 0 200 / 0.4);
+            border-radius: 10px;
+            padding: 3px 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<!--通过文档对象模型 API（如上所述）动态修改 HTML 和 CSS，以更新用户界面;
+        JavaScript 不能先于要修改的 HTML 和 CSS 加载和运行
+
+    客户端代码：在浏览一个网页时，它的客户端代码就会被下载，然后由浏览器来运行并展示
+    解释代码：当 JavaScript 源代码被执行时，它会被编译成二进制的格式，使代码运行速度更快
+-->
+    <p>Player1:Chris</p>
+    <script type="text/javascript">
+        const para = document.querySelector("p");
+
+        para.addEventListener("click",updateName);
+
+        function updateName() {
+            const name = prompt("Enter a new name");
+            para.textContent = `Player 1: ${name}`;
+        }
+    </script>
+</body>
+
+</html>
