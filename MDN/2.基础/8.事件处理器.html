@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Random color example — event handler attribute</title>
+  <style>
+    button {
+      margin: 10px
+    }
+  </style>
+</head>
+<body>
+<button>Change color</button>
+<script>
+  const btn = document.querySelector('button');
+
+  const controller = new AbortController();
+
+  function random(number) {
+    return Math.floor(Math.random() * (number+1));
+  }
+  function changeBackground() {
+    const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    document.body.style.backgroundColor = rndCol;
+  }
+  // focus\blur\dblclick\mouseover\mouseout
+  btn.addEventListener('click', changeBackground,
+          {signal:controller.signal});//向该处理器传递AbortSignal
+  // 移除任何/所有与该控制器相关的事件处理器
+  controller.abort();
+//   直接移除监听器
+//   btn.removeEventListener("click",changeBackground);
+
+//   事件处理器属性
+  btn.onclick = changeBackground;
+</script>
+</body>
+</html>
