@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="demo">{{fullName}}</div>
+</body>
+<script type="module">
+  var vm = new Vue({
+    el: "#demo",
+    data: {
+      firstName: 'Foo',
+      lastName: 'Bar',
+      fullName: 'Foo Bar'
+    },
+    computed:{
+      // fullName: function () {
+      //   return this.firstName +' '+this.lastName
+      // }
+        fullName: {
+            get(){
+                return this.firstName +' '+this.lastName
+            },
+            set(value){
+                console.log('set的值为'+ value)
+            }
+        }
+    }
+  })
+</script>
+</html>

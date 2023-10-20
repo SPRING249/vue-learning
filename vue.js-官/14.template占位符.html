@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14.template占位符</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<!--让两个标签循环一次数据且没有多余标签？使用 template 标签替换最外层的 div 标签-->
+<div id="app">
+  <template v-for="(item,index) of list" :key="item.id">
+    <div>
+      {{item.text}}---{{index}}
+    </div>
+    <p>{{item.text}}</p>
+  </template>
+</div>
+</body>
+</html>

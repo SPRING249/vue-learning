@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="example">
+  <p>{{message}}</p>
+  <p>{{reverseMessage}}</p>
+</div>
+</body>
+<script type="module">
+  const vm = new Vue({
+    el: "#example",
+    data: {
+      message: "hello"
+    },
+    computed: {
+      reverseMessage: function () {
+        // 1.计算属性是基于它们的响应式依赖进行缓存的。只在相关响应式依赖发生改变时它们才会重新求值
+        return this.message.split('').reverse().join('')
+
+      }
+    }
+  });
+</script>
+</html>

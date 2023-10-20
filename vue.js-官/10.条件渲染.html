@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+  <div id="app">
+<!--    v-if 和 v-show 都能控制元素是否在页面显示。
+它们的区别是：
+v-if 对应的表达式的值是 false 时，它所在标签不存在于 DOM 中，当值为 true 时重新添加入 DOM中；
+v-show 对应的表达式的值是 false 时，它所在标签依然存在 DOM 中，只是改变了元素的 displayCSS 属性为 none。
+
+即：v-if通过对 DOM 移除或添加来隐藏/显示元素， v-show通过改变元素的 display属性来隐藏/显示元素。
+所以当我们需要频繁的让一个 DOM 元素隐藏或显示时，使用 v-show 性能会更佳。
+-->
+    <div v-if="show" data-test="v-if">{{ message }}</div>
+    <div v-else>coming  ///</div>
+
+    <div v-show="show" data-test="v-show">{{message}}</div>
+
+
+  </div>
+</body>
+<script type="module">
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello  hello',
+      // show: true,
+      show:false
+    }
+  });
+</script>
+</html>

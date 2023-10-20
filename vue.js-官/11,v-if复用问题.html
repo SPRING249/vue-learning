@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="app">
+<!--  给某个 DOM 元素上加一个 key 值，Vue 会发现这个 key 值与别的 DOM 元素的 key 值不一样，Vue 就不会复用这部分的内容。-->
+  <div v-if="show">
+    用户名：<input key="username"> <!-- 1️⃣添加 key 值 username； -->
+  </div>
+
+  <div v-else>
+    邮箱名：<input key="email"> <!-- 2️⃣添加 key 值 email。 -->
+  </div>
+
+</div>
+</body>
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+
+      show: true // 3️⃣show 默认值为 true。
+    }
+  });
+</script>
+</html>

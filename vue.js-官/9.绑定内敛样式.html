@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="app">
+<!--  对象语法：，对象语法常常结合返回对象的计算属性使用。-->
+  <div :style="{color: activeColor,fontSize: fontSize+'px'}">Hi</div>
+  <div :style="styleObject">Hi</div>
+</div>
+</body>
+<script type="module">
+  var vm = new Vue({
+    el: '#app',
+    data:{
+      activeColor:'red',
+      fontSize:30,
+      styleObject:{
+        color:'green',
+        fontSize:20
+      }
+    }
+  })
+</script>
+</html>

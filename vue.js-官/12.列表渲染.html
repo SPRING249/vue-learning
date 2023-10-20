@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="app">
+<!--  后端返回的数据，一般来说都会携带一个与数据库或跟后端相关的唯一的一个数据条目“标识符”：-->
+<!--  使用数据自带的唯一标识符作为 key 值，
+它既是唯一的，也不是下标。这样就能保证我们 key 值的使用是正确的，性能上也最高。-->
+  <div v-for="(item,index) of list"
+      :key="item.id">
+    {{item.text}} --> {{index}}
+  </div>
+</div>
+</body>
+<script>
+var vm=new Vue({
+  el:'#app',
+  data:{
+    list: [{
+      id: '0101101001',
+      text: 'Hello'
+
+    }, {
+      id: '0101101002',
+      text: 'qdywxs'
+    }, {
+      id: '0101101003',
+      text: 'Oli'
+    }]
+  }
+})
+</script>
+</html>
