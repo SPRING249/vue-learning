@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+
+</body>
+<script type="module">
+  const data = {a: 1};
+  const vm = new Vue({
+    data:data
+  })
+
+  console.log(vm.a === data.a)
+
+  vm.a = 2
+  console.log(data.a)
+</script>
+</html>
