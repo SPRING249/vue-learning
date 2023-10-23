@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="root">
+    <chlid content="hello world"></chlid>
+</div>
+</body>
+<script>
+    Vue.component("child",{
+        props:{
+            content: {
+                type: String, // 🚀表示类型必须为 String ；
+                required: false, // 🚀true 表示属性必传；false 表示可以不传属性；
+                default: "default",// 🚀提醒父组件并没有属性传递；
+                validator: function(value) { // 🚀自定义校验器，表示还可以对传入属性进行“长度”的校验；
+                    return (value.length > 5) // 这个逻辑为 true ，“属性”才会被接收！
+                }
+            }
+        }
+    })
+    const vm = new Vue({
+        el: '#root'
+    });
+
+</script>
+</html>
