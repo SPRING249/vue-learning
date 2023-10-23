@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="demo">
+    <button-counter title="title1 : "></button-counter>
+    <!--    组件复用-->
+    <button-counter title="title2 : "></button-counter>
+</div>
+</body>
+<script>
+    // 定义一个名为 button-counter 的新组件
+    Vue.component('button-counter',{
+        props: ['title'],
+        data:function () {
+            return{
+                count:0
+        }
+    },
+        template: '<div><h1>hi..</h1><button v-on:click="clickFun">{{title}}You clicked me {{ count }} times.</button></div>',
+        methods:{
+            clickFun:function (){
+                this.count++;
+                // 子组件向父组件传值：“触发”指子组件 this.$emit("事件名", 步长 step)
+                this.$emit('clickNow',this.count);
+            }
+        }
+    }
+    )
+    const vm = new Vue({
+        el: '#demo',
+        data: {},
+        methods:{
+            clickNow:function (e) {
+                console.log(e);
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19.vue单向数据流</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="root">
+  <counter v-bind:count="0"></counter>
+  <counter v-bind:count="1"></counter>
+</div>
+</body>
+<script>
+  var counter={
+    props:["count"],
+    data:function () {
+      return{
+        number:this.count // 1️⃣子组件把接收到的“数据”放在自己 data 里的 number 中；
+      }
+
+    },
+    template:'<div @click="handleClick">{{number}}</div>',
+    methods:{
+      handleClick:function () {
+        this.number ++ // 2️⃣接着，我们就可以在方法里使用这个副本“数据”了。将不再报错！
+
+      }
+    }
+  }
+  var vm = new Vue({
+    el:'#root',
+    components:{
+      counter:counter
+    }
+  })
+</script>
+</html>

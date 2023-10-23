@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 子组件向父组件传值</title>
+  <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="root">
+  <counter :count="0" @inc="handleIncrease"></counter>
+  <!-- 2️⃣我们在父组件里通过 @inc 来“监听”这个来自子组件的事件，
+		并把一个“方法”赋值给这个“监听”到的事件； -->
+  <counter :count="1" @inc="handleIncrease"></counter>
+  <div>总计：{{ total }}</div>
+</div>
+</body>
+<script>
+//  父组件向子组件传递参数，通过“属性”的形式。子组件接收这些数据，用 props  ，然后在子组件的 template 中传递该数据
+  const counter = {
+    props:['count'],
+    data:function () {
+      return{
+        number:this.count
+      }
+
+    },
+    template:'<div @click="handleClick">{{number}}</div>',
+    methods:{
+      handleClick:function () {
+        this.number = this.number+2;
+        this.$emit("inc",2) //1️⃣触发inc事件，事件的步长step为2
+        
+      }
+    }
+  };
+  const vm = new Vue({
+    el: '#root',
+    data:{
+      total:1
+    },
+    components: {
+      counter: counter
+    },
+    methods:{
+      handleIncrease:function (step) {// 3️⃣紧接着，我们在根实例里定义这个“方法”；
+        // 4️⃣同时，这个方法可以接收到的“步长” step 这个参数；
+        this.total += step // 5️⃣运用“步长”，轻松实现需求。
+
+      }
+    }
+  });
+</script>
+</html>

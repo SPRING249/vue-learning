@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="root">
+    <counter v-bind:count="0"></counter> <!-- 3️⃣父组件通过“属性”绑定“数据” count，并传递出去-->
+    <counter v-bind:count="1"></counter>
+</div>
+</body>
+<script>
+    var counter = {
+        props:["count"], // 4️⃣在子组件中，通过 props “接收”父组件传递过来的 count 值；
+        template:"<div>{{count}}</div>"  // 1️⃣首先，我们在这里定义一个子组件，并添加一个“模板”；
+    //      5️⃣接着，子组件就可以使用这个“接收”到的“数据”。
+    }
+    var vm = new Vue({
+        el:'#root',
+        components:{ // 2️⃣然后，将1️⃣中的子组件添加到 components 中；
+            counter:counter
+        }
+    })
+</script>
+</html>
