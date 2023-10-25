@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义事件</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="root">
+  <child @click="handleClick"></child><!-- 3️⃣同时，父组件监听了这个“自定义事件”； -->
+</div>
+</body>
+<script>
+  Vue.component("child",{
+    template: '<div @click="handleChildClick">hello world</div>',
+  //   1️⃣在子组件的“元素”上绑定一个点击事件；
+    methods:{
+      handleChildClick:function () {
+        this.$emit('click')// 🚀2️⃣当点击时，触发自定义事件；
+
+      }
+    }
+  })
+  const vm = new Vue({
+    el:'#root',
+    methods:{
+      handleClick:function () {// 4️⃣我们在根实例的方法里去定义这个事件的方法。
+        alert("click")
+
+      }
+    }
+  })
+</script>
+</html>

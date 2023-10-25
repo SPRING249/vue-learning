@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="root">
+<!--  在父组件上做事件监听 @click:native="事件方法名" ，监听的并不是自定义事件，是原生的点击事件。-->
+  <child @click.native="handleClick"></child>
+</div>
+</body>
+<script>
+  Vue.component("child",{
+    template:'<div>hello world</div>'
+  })
+  var vm = new Vue({
+    el:'#root',
+    methods:{
+      handleClick:function () {
+        alert("child click")
+
+      }
+    }
+  })
+</script>
+</html>

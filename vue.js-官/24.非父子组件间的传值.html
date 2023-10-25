@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 非父子组件间的传值</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<!--1.借助 Vue 官方提供的一个数据层的框架——Vuex ；
+    2.发布订阅模式（又称为：总线机制/Bus/观察者模式) √
+-->
+<div id="root">
+  <child content="hello"></child>
+  <child content="world"></child>
+</div>
+</body>
+<script>
+    Vue.prototype.bus = new Vue() // 注释1️⃣：挂载了一个 bus 的属性；
+    Vue.component("child",{
+        data:function () {
+            return{
+                // ❗️基于“单向数据流”，我们将接收到的“数据”复制一份放在子组件 data 的 selfContent 里。
+                selfContent:this.content
+            }
+        },
+        props:{
+            content:String
+        },
+        template:"<div @click='handleClick'>{{selfContent}}</div>",
+        methods:{
+            handleClick:function () {
+                this.bus.$emit("change",this.selfContent)
+                // 注释2️⃣：向外触发事件并携带要传递的内容数据；
+            }
+        },
+        mounted:function () {
+            var this_=this
+            this.bus.$on('change',function (msg) {
+                this_.selfContent=msg
+
+            })
+
+        }
+    })
+    const vm = new Vue({
+        el: '#root'
+    });
+</script>
+</html>
