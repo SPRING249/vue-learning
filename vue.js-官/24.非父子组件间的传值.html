@@ -34,10 +34,14 @@
             }
         },
         mounted:function () {
-            var this_=this
+            const this_ = this;
             this.bus.$on('change',function (msg) {
-                this_.selfContent=msg
-
+                this_.selfContent=msg;
+                /*
+                        ❗️让这个组件去监听 bus 的改变。而 bus 本身就是一个实例，
+                        那么它就可以通过 $on 监听 bus 触发出来的事件。
+                         */
+                this_.selfContent = msg
             })
 
         }
