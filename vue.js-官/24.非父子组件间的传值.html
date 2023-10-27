@@ -6,9 +6,9 @@
     <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
 </head>
 <body>
-<!--1.借助 Vue 官方提供的一个数据层的框架——Vuex ；
-    2.发布订阅模式（又称为：总线机制/Bus/观察者模式) √
--->
+<!--&lt;!&ndash;1.借助 Vue 官方提供的一个数据层的框架——Vuex ；-->
+<!--    2.发布订阅模式（又称为：总线机制/Bus/观察者模式) √-->
+<!--&ndash;&gt;-->
 <div id="root">
   <child content="hello"></child>
   <child content="world"></child>
@@ -38,7 +38,7 @@
             this.bus.$on('change',function (msg) {
                 this_.selfContent=msg;
                 /*
-                        ❗️让这个组件去监听 bus 的改变。而 bus 本身就是一个实例，
+                      ❗️让这个组件去监听 bus 的改变。而 bus 本身就是一个实例，
                         那么它就可以通过 $on 监听 bus 触发出来的事件。
                          */
                 this_.selfContent = msg

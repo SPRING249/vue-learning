@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div id="root">
+  <child><!-- 1️⃣首先，父组件调用子组件的时候，给子组件传了一个“插槽”，
+						这个“插槽”叫做“作用域插槽”。 -->
+      <template v-slot="props">
+          <!-- 2️⃣“作用域插槽”必须是一个用占位标签 template 包裹的内容！
+               3️⃣同时，这个插槽要声明，我要从子组件接收的数据都放在 props 里边； -->
+          <h1>{{props.item}}</h1>
+      </template>
+  </child>
+</div>
+<script>
+    Vue.component("child",{
+        data:function (){
+            return{
+                list:[1,2,3,4]
+            }
+        },
+        template:`<div>
+                <ul>
+                 <slot v-for="item of list" :item="item"></slot>
+                </ul>
+              </div>`
+        /*
+      🚀这段代码的意思：这个 child 组件去做一个列表的循环，但列表项中的每一项怎么“显示”，我并不关心；
+      ❗️具体要怎么显示，由外部来告诉我怎么显示。
+       */
+    })
+    var vm = new Vue({
+        el:'#root'
+    })
+</script>
+
+</body>
+</html>
